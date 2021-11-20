@@ -3,7 +3,10 @@ dependencyResolutionManagement {
   repositories {
     google()
     mavenCentral()
-    jcenter() // Warning: this repository is going to shut down soon
   }
 }
 rootProject.name = "The New York Times"
+include ':app'
+include ':data'
+include ':domain'
+include ':usecases'
