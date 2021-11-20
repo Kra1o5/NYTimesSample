@@ -6,7 +6,7 @@ dependencyResolutionManagement {
   }
 }
 rootProject.name = "The New York Times"
-include ':app'
-include ':data'
-include ':domain'
-include ':usecases'
+include (":app")
+include (":data")
+include (":domain")
+include (":usecases")
