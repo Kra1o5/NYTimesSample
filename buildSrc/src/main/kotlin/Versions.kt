@@ -17,5 +17,6 @@ object Versions {
     const val espresso = "3.4.0"
     const val junitKtx = "1.1.3"
     const val navigation = "2.3.5"
+    const val browser = "1.4.0"
     const val glide = "4.11.0"
 }

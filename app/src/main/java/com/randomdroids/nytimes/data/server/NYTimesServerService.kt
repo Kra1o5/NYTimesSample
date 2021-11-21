@@ -9,6 +9,6 @@ import retrofit2.http.Path
 
 interface NYTimesServerService {
 
-    @GET("{type}/$ALL_SECTIONS/{frequency}?$API_KEY")
-    suspend fun getArticles(@Path("type") type: String, @Path("frequency") frequency: String): Response<ArticlesDTOResult>
+    @GET("{type}/$ALL_SECTIONS/{socialMedia}/{publishedDate}?$API_KEY")
+    suspend fun getArticles(@Path("type") type: String, @Path("publishedDate") publishedDate: String, @Path("socialMedia") socialMedia: String): Response<ArticlesDTOResult>
 }

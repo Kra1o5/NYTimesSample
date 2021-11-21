@@ -5,6 +5,6 @@ data class Article (
     var section: String?,
     var author: String?,
     var title: String?,
-    var publishDate: String?,
+    var publishedDate: String?,
     var media: List<ArticleImage>?
 )

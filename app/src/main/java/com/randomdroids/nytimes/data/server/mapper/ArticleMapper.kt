@@ -8,6 +8,6 @@ fun ArticleDTO.toDomain() = Article(
     this.section,
     this.author,
     this.title,
-    this.publishDate,
+    this.publishedDate,
     this.image?.map { it -> it.toDomain() }
 )

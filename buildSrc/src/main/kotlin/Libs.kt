@@ -8,7 +8,8 @@ object Libs {
         "com.google.dagger:hilt-android:${Versions.hilt}",
         "androidx.recyclerview:recyclerview:${Versions.recyclerView}",
         "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}",
-        "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
+        "androidx.navigation:navigation-ui-ktx:${Versions.navigation}",
+        "androidx.browser:browser:${Versions.browser}"
     )
 
     val androidKaptLibs = listOf(

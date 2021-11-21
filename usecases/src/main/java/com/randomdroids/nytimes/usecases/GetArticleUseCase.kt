@@ -6,5 +6,5 @@ import com.randomdroids.nytimes.data.repository.NYTimesRepository
 import com.randomdroids.nytimes.domain.Article
 
 class GetArticleUseCase(private val nyTimesRepository: NYTimesRepository) {
-    suspend fun invoke(type: String, frequency: String): ResultData<Response<List<Article>>> = nyTimesRepository.getArticles(type, frequency)
+    suspend fun invoke(type: String, publishDate: String, socialMedia: String): ResultData<Response<List<Article>>> = nyTimesRepository.getArticles(type, publishDate, socialMedia)
 }

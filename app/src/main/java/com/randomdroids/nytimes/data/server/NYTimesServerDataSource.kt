@@ -11,9 +11,9 @@ class NYTimesServerDataSource @Inject constructor(
 ) :
     RemoteDataSource {
 
-    override suspend fun getArticles(type: String, frequency: String): Response<List<Article>> {
+    override suspend fun getArticles(type: String, publishDate: String, socialMedia: String): Response<List<Article>> {
         return try {
-            val response = nyTimesServerService.getArticles(type, frequency)
+            val response = nyTimesServerService.getArticles(type, publishDate, socialMedia)
             if (response.isSuccessful) {
                 Response(value = response.body()?.results?.map { it.toDomain() } ?: emptyList())
             } else {

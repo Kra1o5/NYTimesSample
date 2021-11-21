@@ -6,9 +6,9 @@ import com.randomdroids.nytimes.data.source.RemoteDataSource
 import com.randomdroids.nytimes.domain.Article
 
 class NYTimesRepository(private val remoteDataSource: RemoteDataSource) {
-    suspend fun getArticles(type: String, frequency: String): ResultData<Response<List<Article>>> {
+    suspend fun getArticles(type: String, publishDate: String, socialMedia: String): ResultData<Response<List<Article>>> {
         return try {
-            ResultData.Success(remoteDataSource.getArticles(type, frequency))
+            ResultData.Success(remoteDataSource.getArticles(type, publishDate, socialMedia))
         } catch (exception: Exception) {
             ResultData.Failure(exception)
         }

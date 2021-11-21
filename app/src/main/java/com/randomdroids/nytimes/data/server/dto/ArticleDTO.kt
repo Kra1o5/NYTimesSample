@@ -12,6 +12,6 @@ data class ArticleDTO(
     @SerializedName("section") val section: String?,
     @SerializedName("byline") val author: String?,
     @SerializedName("title") val title: String?,
-    @SerializedName("publish_date") val publishDate: String?,
+    @SerializedName("published_date") val publishedDate: String?,
     @SerializedName("media") val image: List<ArticleImageDTO>?
 ) : Parcelable

@@ -9,7 +9,7 @@ object ServerConstants {
     const val MOST_SHARED = "mostshared"
     const val LAST_DAY = "1.json"
     const val LAST_SEVEN_DAYS = "7.json"
-    const val LAST_30_DAYS = "30.json"
+    const val LAST_THIRTY_DAYS = "30.json"
     const val FACEBOOK = "facebook"
     const val TWITTER = "twitter"
     const val ALL_SOCIAL = "$FACEBOOK;$TWITTER"

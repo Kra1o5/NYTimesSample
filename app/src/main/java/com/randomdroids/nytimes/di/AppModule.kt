@@ -8,7 +8,6 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import kotlinx.coroutines.CoroutineDispatcher
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -42,6 +41,7 @@ class AppModule {
         }
 
     @Provides
-    fun nyTimesDataSourceProvider(nyTimesServerService: NYTimesServerService): RemoteDataSource = NYTimesServerDataSource(nyTimesServerService)
+    fun nyTimesDataSourceProvider(nyTimesServerService: NYTimesServerService): RemoteDataSource =
+        NYTimesServerDataSource(nyTimesServerService)
 
 }

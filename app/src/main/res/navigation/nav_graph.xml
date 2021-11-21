@@ -10,5 +10,73 @@
         android:name="com.randomdroids.nytimes.ui.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.randomdroids.nytimes.ui.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail">
+        <action
+            android:id="@+id/action_detailFragment_to_browseFragment"
+            app:destination="@id/browseFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_detailFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="typeArg"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="publishDateArg"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="socialMediaArg"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/browseFragment"
+        android:name="com.randomdroids.nytimes.ui.browse.BrowserFragment"
+        android:label="fragment_browse"
+        tools:layout="@layout/fragment_browser">
+        <action
+            android:id="@+id/action_browseFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="urlArg"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="typeArg"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="publishDateArg"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="socialMediaArg"
+            android:defaultValue=""
+            app:argType="string" />
     </fragment>
 </navigation>

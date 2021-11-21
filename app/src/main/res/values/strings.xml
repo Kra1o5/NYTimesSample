@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">The New York Times</string>
+    <string name="typeMostViewed">Most Viewed</string>
+    <string name="typeMostEmailed">Most Emailed</string>
+    <string name="typeMostShared">Most Shared</string>
+    <string name="publishDateLastDay">1 Day</string>
+    <string name="publishDateSevenDays">7 Days</string>
+    <string name="publishDateThirtyDays">30 Days</string>
+    <string name="twitter">Twitter</string>
+    <string name="facebook">Facebook</string>
+    <string name="type">Type:</string>
+    <string name="publishDate">Publish Date:</string>
+    <string name="socialMedia">Social Media:</string>
+    <string name="search">Search</string>
+    <string name="browserError">Cannot load requested URL, you will be redirect to articles list screen</string>
 </resources>
