@@ -54,19 +54,19 @@ class DetailFragment : Fragment() {
                 binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE
             }.launchIn(this)
 
-            var socialMediaValue = ""
-            if (args.socialMediaArg != "NOTUSED") {
-                socialMediaValue = args.socialMediaArg
-            }
-
-            viewModel.requestListArticles(args.typeArg, args.publishDateArg, socialMediaValue)
+            viewModel.requestListArticles(args.typeArg, args.publishDateArg, args.socialMediaArg)
 
             viewModel.articles.onEach { adapter.articlesList = it }.launchIn(this)
 
             viewModel.navigateToArticleDetail.onEach { articleUrl ->
                 if (articleUrl.isNotEmpty()) {
                     val navigateAction =
-                        DetailFragmentDirections.actionDetailFragmentToBrowseFragment(articleUrl, args.typeArg, args.publishDateArg, socialMediaValue)
+                        DetailFragmentDirections.actionDetailFragmentToBrowseFragment(
+                            articleUrl,
+                            args.typeArg,
+                            args.publishDateArg,
+                            args.socialMediaArg
+                        )
                     findNavController().navigate(navigateAction)
                 }
             }.launchIn(this)

@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
-import androidx.core.view.size
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -61,15 +60,15 @@ class MainFragment : Fragment() {
 
             socialMedia = if (chipGroup.isVisible) {
                 when {
-                    chipGroup.size == 2 -> ServerConstants.ALL_SOCIAL
-                    chipGroup.checkedChipId == R.id.chipFacebook -> ServerConstants.FACEBOOK
-                    chipGroup.checkedChipId == R.id.chipTwitter -> ServerConstants.TWITTER
+                    chipGroup.checkedChipIds.size == 2 -> ServerConstants.ALL_SOCIAL
+                    chipGroup.checkedChipIds.isNotEmpty() && chipGroup.checkedChipIds[0] == R.id.chipFacebook -> ServerConstants.FACEBOOK
+                    chipGroup.checkedChipIds.isNotEmpty() && chipGroup.checkedChipIds[0] == R.id.chipTwitter -> ServerConstants.TWITTER
                     else -> ""
                 }
             } else {
-                "NOTUSED"
+                ""
             }
-            if (type.isNotBlank() && publishDate.isNotBlank() && socialMedia.isNotBlank()) {
+            if (type.isNotBlank() && publishDate.isNotBlank() && (socialMedia.isNotBlank() || !chipGroup.isVisible)) {
                 viewModel.dataFilter()
             }
         }
