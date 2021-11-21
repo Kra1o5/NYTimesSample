@@ -38,7 +38,7 @@ class DetailAdapter(articlesList: List<Article> = emptyList(), private val liste
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val binding = TabletLayoutBinding.bind(view)
         fun bind(article: Article) = with(binding) {
-            if (article.media!![0].imageMetadata != null) {
+            if (!article.media.isNullOrEmpty()) {
                 articleImage.loadUrl(article.media!![0].imageMetadata!![0].url.toString())
             }
             articleTitle.text = article.title
